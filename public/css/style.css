@@ -1,0 +1,723 @@
+.contain-all {
+    padding-bottom: 30px;
+    background-color: #F6F6F6;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.header {
+    background-color: rgba(255, 255, 255, 1);
+    height: 80px;
+    padding: 0 55px;
+}
+
+.contain-left-topbar {
+    align-items: center;
+    color: #777777;
+}
+
+.box-info p {
+    margin: 0;
+}
+
+img {
+    max-width: 200px;
+}
+
+.contain-right-topbar {
+    align-items: center;
+}
+
+.box-icon-wrapper {
+    margin-right: 20px;
+}
+
+
+.header-main {
+    background-color: black;
+    line-height: 60px;
+    height: 60px;
+    padding: 0 55px;
+}
+
+.header-main i {
+    font-size: 15px;
+    color: black;
+}
+
+.header-main .box {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    position: relative;
+    border-radius: 50%;
+}
+
+.header-main .inside-box {
+    position: absolute;
+    /* top: 0; */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header-main .count-heart {
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    color: red;
+}
+
+.header-main .cart-posion {
+    position: relative;
+}
+
+.header-main .count-cart {
+    position: absolute;
+    top: -15px;
+    right: -7px;
+    color: red;
+}
+
+.header-main .money {
+    color: white;
+}
+
+.search,
+.user,
+.heart,
+.cart,
+.money,
+.country {
+    padding-left: 15px;
+}
+
+.header-main ul li a {
+    color: white;
+    font-size: 15px;
+    padding-right: 15px;
+}
+
+
+
+
+/* FOOTER  */
+
+
+
+.footer {
+    background-color: rgb(15, 15, 15);
+    padding: 0 55px;
+}
+
+.footer-store .col-sm-12 {
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: #FFFFFF2B;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    margin: 0px 0px 30px 0px;
+    padding: 30px 0px 0px 0px;
+    /* padding: 30px 0; */
+}
+
+.footer .content-footer-store i {
+    padding-left: 10px;
+}
+
+.footer .content-footer-store {
+    /* display: flex; */
+    color: white;
+    font-size: 20px;
+}
+
+.footer .marshall-footer {
+    color: #c1baba;
+    font-size: 15px;
+}
+
+.footer .marshall-footer p {
+    margin-top: 20px;
+}
+
+.footer .a {
+    font-size: 20px;
+    color: #fff;
+}
+
+.footer .content-a a {
+    color: #dcdcdc;
+    font-size: 15px;
+}
+
+.footer-store .row {
+    padding-top: 30px;
+}
+
+.footer-store .last-footer {
+    padding-bottom: 30px;
+}
+
+
+
+/*  BANNER    */
+.banner .img-banner {
+    background-image: url('https://marshallstorevietnam.vn/wp-content/uploads/2022/12/hero-all-speakers-desktop.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 50px 0 30px 0;
+    position: relative;
+    border-radius: 10px;
+    max-width: 100%;
+    height: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.banner .text-banner {
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 80px 0 0 100px;
+}
+
+.banner .text-banner h1 {
+    padding-bottom: 20px;
+}
+
+.banner .text-banner p {
+    padding-bottom: 20px;
+    font-size: 15px;
+    color: #F4EBE4;
+}
+
+.banner .text-banner a {
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 30px;
+    background-color: black;
+}
+
+
+
+
+/* PRODUCT HOT */
+.contain-product-hot {
+    padding-bottom: 50px;
+}
+
+.contain-product-hot .header-product-hot {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 55px 30px 55px;
+}
+
+.contain-product-hot .header-product-hot a {
+    padding: 10px 20px;
+    background-color: #747474;
+    color: white;
+    border-radius: 20px;
+    font-size: 15px;
+}
+
+.contain-product-hot .main-product-hot {
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    text-align: start;
+}
+
+.contain-product-hot .main-product-hot .product-hot img {
+    max-width: 100%;
+}
+
+.product-hot .content-product-hot .text-product-hot {
+    margin-left: 15px;
+}
+.contain-product-hot .buy-now{
+    text-align: center;
+}
+.contain-product-hot .main-product-hot .product-hot a span {
+    display: inline-block;
+    width: 90%;
+    line-height: 40px;
+    background-color: black;
+    color: white;
+    border: 10px;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.contain-product-hot .main-product-hot .product-hot a span i {
+    display: none;
+    animation: fadeIn linear 0.3s;
+}
+
+.contain-product-hot .main-product-hot .product-hot a:hover i {
+    display: inline-block;
+}
+
+.contain-product-hot .main-product-hot .product-hot a:hover p {
+    display: none;
+}
+
+
+
+.product-hot .ab-product-right {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 19px 20px 50px 2px rgb(234 234 234);
+    position: absolute;
+    z-index: 3;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    display: none;
+    animation: fadeIn linear 0.3s;
+}
+
+.contain-product-hot .main-product-hot:hover .ab-product-right {
+    display: block;
+}
+
+.product-hot .ab-product-right i {
+    margin: 15px;
+}
+
+.content-product-hot .ab-product-hot {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.content-product-hot .ab-product-hot .discount span {
+    background-color: black;
+    color: white;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.content-product-hot .ab-product-hot .hot span {
+    background-color: red;
+    color: white;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.content-product-hot .ab-product-hot .new span {
+    background-color: green;
+    color: white;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+/*  */
+.wrapper-speaker-mobile {
+    background-color: white;
+    border-radius: 10px;
+    margin: 0 55px;
+}
+
+.wrapper-speaker-mobile img {
+    max-width: 100%;
+    width: 100%;
+}
+
+.wrapper-speaker-mobile .content-speaker-right h1 {
+    font-size: 52px;
+    margin-bottom: 10px;
+}
+
+.wrapper-speaker-mobile .content-speaker-right p {
+    color: black;
+    max-width: 60%;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.wrapper-speaker-mobile .content-speaker-right a {
+    color: white;
+    display: inline-block;
+    border-radius: 10px;
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 15px;
+    background-color: black;
+
+}
+
+
+
+
+
+
+/*  SPEAKER HOME */
+
+.contain-speaker {
+    margin-top: 50px;
+    padding-bottom: 50px;
+    background-image: radial-gradient(at top right, #6C685D 0%, #000000 100%);
+    
+}
+
+.contain-speaker .content-speaker-home-left img {
+    width: 100%;
+    max-width: 100%;
+}
+.contain-speaker .content-speaker-home-right{
+    color: white;
+}
+.contain-speaker .content-speaker-home-right h1{
+    font-size: 52px;
+    margin-bottom: 15px;
+}
+.contain-speaker .content-speaker-home-right p{
+    color: white;
+    max-width: 60%;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+.contain-speaker .content-speaker-home-right a{
+    color: white;
+    display: inline-block;
+    border-radius: 10px;
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 15px;
+    background-color: black;
+}
+
+
+
+
+/*  CSS VIEW PRODUCT ALL  */
+.contain-speaker-product .main-product-hot {
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    text-align: start;
+}
+
+.contain-speaker-product .main-product-hot .product-hot img {
+    max-width: 100%;
+}
+
+.contain-speaker-product .product-hot .content-product-hot .text-product-hot {
+    margin-left: 15px;
+}
+.contain-speaker-product .buy-now{
+    text-align: center;
+}
+.contain-speaker-product .main-product-hot .product-hot a span {
+    display: inline-block;
+    width: 90%;
+    line-height: 40px;
+    background-color: black;
+    color: white;
+    border: 10px;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.contain-speaker-product .main-product-hot .product-hot a span i {
+    display: none;
+    animation: fadeIn linear 0.3s;
+}
+
+.contain-speaker-product .main-product-hot .product-hot a:hover i {
+    display: inline-block;
+}
+
+.contain-speaker-product .main-product-hot .product-hot a:hover p {
+    display: none;
+}
+
+
+
+.contain-speaker-product .product-hot .ab-product-home-right {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 20px 20px 60px 1px rgb(173 173 173);
+    position: absolute;
+    z-index: 3;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    display: none;
+    animation: fadeIn linear 0.3s;
+}
+
+.contain-speaker-product .main-product-hot:hover .ab-product-home-right {
+    display: block;
+}
+
+.contain-speaker-product .product-hot .ab-product-home-right i {
+    margin: 15px;
+}
+
+.contain-speaker-product .content-product-hot .ab-product-hot {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.contain-speaker-product .content-product-hot .ab-product-hot .discount span {
+    background-color: black;
+    color: white;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.contain-speaker-product .content-product-hot .ab-product-hot .hot span {
+    background-color: red;
+    color: white;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.contain-speaker-product .content-product-hot .ab-product-hot .new span {
+    background-color: green;
+    color: white;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+
+
+
+
+/*   CATE MARSHALL    */
+.contain-cate{
+    margin: 60px 55px 0 55px;
+}
+.contain-cate .content-left-up{
+    background-color: white;
+    border-radius: 10px;
+}
+.contain-cate .content-cate-right img{
+    max-width: 100%;
+}
+.contain-cate .text-cate-left{
+    color: black;
+}
+.contain-cate .text-cate-left h1{
+    font-size: 52px;
+    margin-bottom: 15px;
+}
+.contain-cate .text-cate-left p{
+    /* max-width: 60%; */
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+.contain-cate .text-cate-left a{
+    color: white;
+    display: inline-block;
+    border-radius: 10px;
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 15px;
+    background-color: black;
+}
+
+.content-left-down{
+    margin-top: 20px;
+}
+.contain-cate .content-left-down .left-down{
+    position: relative;
+}
+.contain-cate .content-left-down .left-down img{
+    border-radius: 10px;
+    max-width: 100%;
+}
+.contain-cate .content-left-down .text-down{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: white;
+}
+.contain-cate .content-left-down .text-down a{
+    color: white;
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+.contain-cate .main-product-hot {
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    text-align: start;
+}
+
+.contain-cate .main-product-hot .product-hot img {
+    max-width: 100%;
+}
+
+.contain-cate .product-hot .content-product-hot .text-product-hot {
+    margin-left: 15px;
+}
+.contain-cate .buy-now{
+    text-align: center;
+}
+.contain-cate .main-product-hot .product-hot a span {
+    display: inline-block;
+    width: 90%;
+    line-height: 40px;
+    background-color: black;
+    color: white;
+    border: 10px;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.contain-cate .main-product-hot .product-hot a span i {
+    display: none;
+    animation: fadeIn linear 0.3s;
+}
+
+.contain-cate .main-product-hot .product-hot a:hover i {
+    display: inline-block;
+}
+
+.contain-cate .main-product-hot .product-hot a:hover p {
+    display: none;
+}
+
+
+
+.contain-cate .product-hot .ab-product-right {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 20px 20px 60px 1px rgb(173 173 173);
+    position: absolute;
+    z-index: 3;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    display: none;
+    animation: fadeIn linear 0.3s;
+}
+
+.contain-cate .main-product-hot:hover .ab-product-right {
+    display: block;
+}
+
+.contain-cate .product-hot .ab-product-right i {
+    margin: 15px;
+}
+
+.contain-cate .content-product-hot .ab-product-hot {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.contain-cate .content-product-hot .ab-product-hot .discount span {
+    background-color: black;
+    color: white;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.contain-cate .content-product-hot .ab-product-hot .hot span {
+    background-color: red;
+    color: white;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.contain-cate .content-product-hot .ab-product-hot .new span {
+    background-color: green;
+    color: white;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
