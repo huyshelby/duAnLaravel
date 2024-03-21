@@ -45,11 +45,12 @@
                                 </div>
                             </div>
                             <div class="content-product-hot">
-                                <img src="image/{{ $item->img_main }}" alt="">
+                                {{-- <a href="/product/detail/{{ $item->id_product }}"><img src="image/{{ $item->img_main }}" alt=""></a> --}}
+                                <a href="{{ route('product.detail', ['id' => $item->id_product]) }}"><img src="image/{{ $item->img_main }}" alt=""></a>
                                 <div class="text-product-hot">
                                     <p class="fw-bold mb-2">{{ $item->name }}</p>
                                     <a href="" class="mb-2"
-                                        style="color: #A5A5A5">{{ $item->name_type }}</a>
+                                        style="color: #A5A5A5">{{ $item->name_type_sub }}</a>
                                     <p class="mb-2"><i class="fa-solid fa-check"></i> In stock</p>
                                     @if ($item->sale)
                                         <del style="color: #A5A5A5">{{ number_format($item->price,0) }}</del> <span

@@ -29,3 +29,8 @@ Route::get('gioithieu', function(){
 Route::get('project', function(){
     return view('project');
 });
+Route::prefix('product')->group(function(){
+    Route::get('detail/{id?}', [SanPhamController::class, 'detail'])->name('product.detail');
+    Route::get('search', [SanPhamController::class, 'search'])->name('product.search');
+});
+

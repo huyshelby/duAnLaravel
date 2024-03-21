@@ -109,3 +109,9 @@
         </div>
     </div>
 </header>
+<div>
+    <form action="{{ route('product.search') }}" method="get">
+        <input type="text" name="key" placeholder="tìm kiếm">
+        <input type="submit" value="Gửi">
+    </form>
+</div>
