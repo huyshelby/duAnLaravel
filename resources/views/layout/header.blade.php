@@ -6,7 +6,7 @@
                     <div class="contain-left-topbar d-flex">
                         <div class="box-icon-wrapper me-2">
                             <div class="box-icon">
-                                <img src="image/location.png" width="30" height="30" alt="">
+                                <img src="/image/location.png" width="30" height="30" alt="">
                             </div>
                         </div>
                         <div class="box-info-wrapper">
@@ -20,7 +20,7 @@
                 <div class="col-sm-4">
                     <div class="contain-middle-topbar">
                         <div class="site-logo">
-                            <a href=""><img src="image/Marshall-Logo.png" alt=""></a>
+                            <a href=""><img src="/image/Marshall-Logo.png" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                     <div class="contain-right-topbar d-flex justify-content-end">
                         <div class="box-icon-wrapper">
                             <div class="box-icon">
-                                <img src="image/phone-message.png" width="30" height="30" alt="">
+                                <img src="/image/phone-message.png" width="30" height="30" alt="">
                             </div>
                         </div>
                         <div class="box-info-wrapper">
@@ -97,7 +97,7 @@
                         </div>
                         <div class="country d-flex">
                             <div class="flag">
-                                <img src="image/vietnam.png" width="30" height="30" alt="">
+                                <img src="/image/vietnam.png" width="30" height="30" alt="">
                             </div>
                             <div style="color: white; margin-left:10px">
                                 VIETNAM

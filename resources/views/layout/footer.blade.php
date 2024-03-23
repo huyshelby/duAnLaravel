@@ -34,7 +34,7 @@
                 <div class="row">
                     <div class="col-sm-3">
                         <div class="marshall-footer">
-                            <img src="image/logo-footer.png"  alt="">
+                            <img src="/image/logo-footer.png"  alt="">
                             <p class=" mb-0">Marshall Store Vietnam mong muốn đem đến những sản phẩm đẹp, 
                                 chất lượng cùng những câu chuyện và những trải nghiệm mới mẻ 
                                 cho khách hàng của mình với dịch vụ tốt nhất. </p>
@@ -108,7 +108,7 @@
                                 <p class="mb-0">Marshall Store Vietnam <i class="fa-solid fa-copyright"></i> 2023</p>
                             </div>
                             <div class="last-right">
-                                <img src="image/payments.png" alt="">
+                                <img src="/image/payments.png" alt="">
                             </div>
                         </div>
                     </div>

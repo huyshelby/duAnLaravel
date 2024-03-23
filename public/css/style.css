@@ -239,9 +239,11 @@ img {
 .product-hot .content-product-hot .text-product-hot {
     margin-left: 15px;
 }
-.contain-product-hot .buy-now{
+
+.contain-product-hot .buy-now {
     text-align: center;
 }
+
 .contain-product-hot .main-product-hot .product-hot a span {
     display: inline-block;
     width: 90%;
@@ -396,27 +398,31 @@ img {
     margin-top: 50px;
     padding-bottom: 50px;
     background-image: radial-gradient(at top right, #6C685D 0%, #000000 100%);
-    
+
 }
 
 .contain-speaker .content-speaker-home-left img {
     width: 100%;
     max-width: 100%;
 }
-.contain-speaker .content-speaker-home-right{
+
+.contain-speaker .content-speaker-home-right {
     color: white;
 }
-.contain-speaker .content-speaker-home-right h1{
+
+.contain-speaker .content-speaker-home-right h1 {
     font-size: 52px;
     margin-bottom: 15px;
 }
-.contain-speaker .content-speaker-home-right p{
+
+.contain-speaker .content-speaker-home-right p {
     color: white;
     max-width: 60%;
     font-size: 15px;
     margin-bottom: 15px;
 }
-.contain-speaker .content-speaker-home-right a{
+
+.contain-speaker .content-speaker-home-right a {
     color: white;
     display: inline-block;
     border-radius: 10px;
@@ -446,9 +452,11 @@ img {
 .contain-speaker-product .product-hot .content-product-hot .text-product-hot {
     margin-left: 15px;
 }
-.contain-speaker-product .buy-now{
+
+.contain-speaker-product .buy-now {
     text-align: center;
 }
+
 .contain-speaker-product .main-product-hot .product-hot a span {
     display: inline-block;
     width: 90%;
@@ -545,29 +553,35 @@ img {
 
 
 /*   CATE MARSHALL    */
-.contain-cate{
+.contain-cate {
     margin: 60px 55px 0 55px;
 }
-.contain-cate .content-left-up{
+
+.contain-cate .content-left-up {
     background-color: white;
     border-radius: 10px;
 }
-.contain-cate .content-cate-right img{
+
+.contain-cate .content-cate-right img {
     max-width: 100%;
 }
-.contain-cate .text-cate-left{
+
+.contain-cate .text-cate-left {
     color: black;
 }
-.contain-cate .text-cate-left h1{
+
+.contain-cate .text-cate-left h1 {
     font-size: 52px;
     margin-bottom: 15px;
 }
-.contain-cate .text-cate-left p{
+
+.contain-cate .text-cate-left p {
     /* max-width: 60%; */
     font-size: 15px;
     margin-bottom: 15px;
 }
-.contain-cate .text-cate-left a{
+
+.contain-cate .text-cate-left a {
     color: white;
     display: inline-block;
     border-radius: 10px;
@@ -579,23 +593,27 @@ img {
     background-color: black;
 }
 
-.content-left-down{
+.content-left-down {
     margin-top: 20px;
 }
-.contain-cate .content-left-down .left-down{
+
+.contain-cate .content-left-down .left-down {
     position: relative;
 }
-.contain-cate .content-left-down .left-down img{
+
+.contain-cate .content-left-down .left-down img {
     border-radius: 10px;
     max-width: 100%;
 }
-.contain-cate .content-left-down .text-down{
+
+.contain-cate .content-left-down .text-down {
     position: absolute;
     top: 30px;
     left: 30px;
     color: white;
 }
-.contain-cate .content-left-down .text-down a{
+
+.contain-cate .content-left-down .text-down a {
     color: white;
     display: inline-block;
     width: 100px;
@@ -628,9 +646,11 @@ img {
 .contain-cate .product-hot .content-product-hot .text-product-hot {
     margin-left: 15px;
 }
-.contain-cate .buy-now{
+
+.contain-cate .buy-now {
     text-align: center;
 }
+
 .contain-cate .main-product-hot .product-hot a span {
     display: inline-block;
     width: 90%;
@@ -720,4 +740,122 @@ img {
     align-items: center;
     border-radius: 20px;
     margin-bottom: 5px;
+}
+
+
+
+
+
+/* DETAIL PRODUCT */
+
+
+
+.detail-product .path-detail {
+    font-size: 18px;
+}
+
+.detail-product .content-detail .text-detail {
+    background-color: #1C61E71A;
+    border-radius: 10px;
+}
+
+.detail-product .content-detail .text-detail .text-left {
+    padding: 30px 20px;
+    font-size: 15px;
+    color: #777777;
+}
+
+.detail-product .content-detail .text-detail .text-left p {
+    margin: 0px;
+}
+
+.detail-product .content-detail .text-detail .text-right b {
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px dotted blue;
+    width: 180px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.content-detail .cart-detail .quantity-control{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.quantity-input {
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    outline: none;
+  }
+  
+  .quantity-input::-webkit-inner-spin-button,
+  .quantity-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  .quantity-input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+
+/* .quantity-control {
+    display: flex;
+    align-items: center;
+} */
+
+/* .quantity-input {
+    width: 40px;
+    text-align: center;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+} */
+
+.decrease,
+.increase {
+    width: 30px;
+    height: 30px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    /* border-radius: 4px; */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.decrease:hover,
+.increase:hover {
+    background-color: black;
+    color: white;
+}
+
+.cart-detail .add-cart p{
+    display: inline-block;
+    background-color: black;
+    color: white;
+    width: 100%;
+    border-radius: 5px;
+    margin: 0;
+    line-height: 35px;
+    text-align: center;
+    font-size: 15px
+}
+.cart-detail .buy-now p{
+    display: inline-block;
+    background-color: #6BA331;
+    color: white;
+    width: 100%;
+    border-radius: 5px;
+    margin: 0;
+    line-height: 35px;
+    text-align: center;
+    font-size: 15px
 }
