@@ -13,7 +13,7 @@
                     <i class="fa-solid fa-angle-right"></i>
                 </div>
                 <div class="a" style="display: flex; justify-content: space-between;">
-                    <a href="{{ route('admin.product.add') }}"><i class="fa-solid fa-box-archive"
+                    <a href="{{ route('admin.product.show') }}"><i class="fa-solid fa-box-archive"
                             style="color: #ffffff; margin-right:10px;"></i> Quản lý hàng hóa</a>
                     <i class="fa-solid fa-angle-right"></i>
                 </div>

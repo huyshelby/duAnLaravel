@@ -20,7 +20,7 @@
                 <div class="col-sm-4">
                     <div class="contain-middle-topbar">
                         <div class="site-logo">
-                            <a href=""><img src="/image/Marshall-Logo.png" alt=""></a>
+                            <a href="/"><img src="/image/Marshall-Logo.png" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                     <div class="header-menu-left">
                         <div class="main-menu ">
                             <ul class="d-flex p-0 text-uppercase">
-                                <li><a href=""><i class="fa-solid fa-store" style="color:white;"></i></a>
+                                <li><a href="/"><i class="fa-solid fa-store" style="color:white;"></i></a>
                                 </li>
                                 {{-- @dd($data) --}}
                                 @foreach ($data_type as $item)

@@ -13,6 +13,8 @@ class products extends Model
     function all_product()
     {
         $all = DB::table('products')
+            ->join('type_sub', 'type_sub.id_type_sub', '=', 'products.id_type_sub')
+            ->orderBy('id_product', 'desc')
             ->get();
         return $all;
     }
@@ -60,6 +62,7 @@ class products extends Model
     //         ->first();
     //     return $related_product;
     // }
+
     function search()
     {
         if ($key = request()->key) {

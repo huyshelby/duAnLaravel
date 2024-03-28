@@ -4,20 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\admin_product;
+use App\Models\cate;
 
 class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    private $product;
-    public function __construct(admin_product $admin_product)
+    public function __construct()
     {
-        $this->product = $admin_product;
+
     }
     public function index()
     {
-        return view('admin.layout_admin.dashboard');
+       
     }
 
     /**
@@ -25,7 +25,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin.products.add');
+        
     }
 
     /**
@@ -33,16 +33,13 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $this->product->add($request);
-
-        // dd($request);
-        return redirect('admin');
+        
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
         //
     }
