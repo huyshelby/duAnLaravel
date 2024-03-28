@@ -749,7 +749,9 @@ img {
 /* DETAIL PRODUCT */
 
 
-
+.detail-product{
+    background-color: white;
+}
 .detail-product .path-detail {
     font-size: 18px;
 }
@@ -778,13 +780,14 @@ img {
     text-align: center;
 }
 
-.content-detail .cart-detail .quantity-control{
+.content-detail .cart-detail .quantity-control {
     display: flex;
     align-items: center;
     border: 1px solid #ccc;
     border-radius: 4px;
     overflow: hidden;
 }
+
 .quantity-input {
     width: 50px;
     height: 30px;
@@ -792,17 +795,17 @@ img {
     font-size: 16px;
     border: none;
     outline: none;
-  }
-  
-  .quantity-input::-webkit-inner-spin-button,
-  .quantity-input::-webkit-outer-spin-button {
+}
+
+.quantity-input::-webkit-inner-spin-button,
+.quantity-input::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
-  }
-  
-  .quantity-input[type="number"] {
+}
+
+.quantity-input[type="number"] {
     -moz-appearance: textfield;
-  }
+}
 
 
 /* .quantity-control {
@@ -837,7 +840,7 @@ img {
     color: white;
 }
 
-.cart-detail .add-cart p{
+.cart-detail .add-cart p {
     display: inline-block;
     background-color: black;
     color: white;
@@ -848,7 +851,8 @@ img {
     text-align: center;
     font-size: 15px
 }
-.cart-detail .buy-now p{
+
+.cart-detail .buy-now p {
     display: inline-block;
     background-color: #6BA331;
     color: white;
@@ -858,4 +862,246 @@ img {
     line-height: 35px;
     text-align: center;
     font-size: 15px
+}
+
+
+.ab-product-detail {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.content-product-detail .ab-product-detail .discount span {
+    background-color: black;
+    color: white;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.content-product-detail .ab-product-detail .hot span {
+    background-color: red;
+    color: white;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.content-product-detail .ab-product-detail .new span {
+    background-color: green;
+    color: white;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.net {
+    display: flex;
+    justify-content: space-between;
+}
+.net .compare {
+    color: black;
+    font-size: 17px;
+    font-weight: 600;
+}
+.net .add-wish {
+    color: black;
+    font-size: 17px;
+    font-weight: 600;
+}
+.net .share {
+    color: black;
+    font-size: 17px;
+    font-weight: 600;
+}
+.net .share span a {
+    color: black;
+}
+.service{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 20px 0 20px 0;
+}   
+.service .shield, .service .return{
+    margin: 15px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.service .shield span, .service .return span{
+    margin-left: 5px;
+}
+.payment-method{
+    font-size: 15px;
+    font-weight: 600;
+    padding-bottom: 30px;
+}
+
+.content-detail .name-detail, .content-detail .text-detail, .content-detail .price-detail, 
+.content-detail .cart-detail {
+    margin-bottom: 30px;
+}
+
+
+.info-product{
+    margin-top: 20px;
+}
+.info-product .info-left{
+    background-color: #000000;
+    border-radius: 10px;
+    color: #c0c0c0;
+}
+.info-product .info-left h3{
+    color: white;
+} 
+.info-product .content{
+    padding: 20px;
+}
+.info-product .content p{
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+
+.info-right{
+    background-color: white;
+    border-radius: 10px;
+}
+.info-right .contain-info{
+    padding: 20px;
+}
+.info-product .info-right .info-detail{
+    font-size: 16px;
+    margin-top: 20px;
+}
+.info-right .title-info{
+    margin-top: 20px;
+}
+
+
+/* RELATED PRODUCT */
+
+.main-product-relate {
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    text-align: start;
+}
+
+.main-product-relate .product-relate img {
+    max-width: 100%;
+}
+
+.product-relate .content-product-relate .text-product-relate {
+    margin-left: 15px;
+}
+
+.buy-now {
+    text-align: center;
+}
+
+.main-product-relate .product-relate a span {
+    display: inline-block;
+    width: 90%;
+    line-height: 40px;
+    background-color: black;
+    color: white;
+    border: 10px;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.main-product-relate .product-relate a span i {
+    display: none;
+    animation: fadeIn linear 0.3s;
+}
+
+.main-product-relate .product-relate a:hover i {
+    display: inline-block;
+}
+
+.main-product-relate .product-relate a:hover p {
+    display: none;
+}
+
+
+
+.product-relate .ab-product-right {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 19px 20px 50px 2px rgb(234 234 234);
+    position: absolute;
+    z-index: 3;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    display: none;
+    animation: fadeIn linear 0.3s;
+}
+
+.main-product-relate:hover .ab-product-right {
+    display: block;
+}
+
+.product-relate .ab-product-right i {
+    margin: 15px;
+}
+
+.content-product-relate .ab-product-relate {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.content-product-relate .ab-product-relate .discount span {
+    background-color: black;
+    color: white;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.content-product-relate .ab-product-relate .hot span {
+    background-color: red;
+    color: white;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.content-product-relate .ab-product-relate .new span {
+    background-color: green;
+    color: white;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.relate-product .col-sm-3{
+    padding-right: 0;
 }

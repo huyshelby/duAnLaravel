@@ -51,9 +51,12 @@
                             <ul class="d-flex p-0 text-uppercase">
                                 <li><a href=""><i class="fa-solid fa-store" style="color:white;"></i></a>
                                 </li>
-                                <li><a href="">Loa marshall</a></li>
+                                {{-- @dd($data) --}}
+                                @foreach ($data_type as $item)
+                                    <li><a href="{{ route('product.product_cate', ['id' => $item->id_type_main]) }}">{{ $item->name_type }}</a></li>
+                                    {{-- {{ route('product.detail', ['id' => $item->id_product]) }} --}}
+                                @endforeach
                                 <li><a href="">Phụ kiện marshall</a></li>
-                                <li><a href="">Tai nghe marshall</a></li>
                                 <li><a href="">Blog</a></li>
                                 <li><a href="">Liên hệ</a></li>
                             </ul>
@@ -63,6 +66,14 @@
                 <div class="col-sm-5">
                     <div class="header-menu-right d-flex justify-content-end align-items-center">
                         <div class="search">
+                            {{-- <div>
+                                <form action="{{ route('product.search') }}" method="get">
+                                    <input type="text" name="key" placeholder="tìm kiếm">
+                                    <button type="submit"><a href=""><span><i
+                                                    class="fa-solid fa-magnifying-glass"
+                                                    style="color: white;"></i></span></a></button>
+                                </form>
+                            </div> --}}
                             <a href=""><span><i class="fa-solid fa-magnifying-glass"
                                         style="color: white;"></i></span></a>
                         </div>
@@ -112,6 +123,7 @@
 <div>
     <form action="{{ route('product.search') }}" method="get">
         <input type="text" name="key" placeholder="tìm kiếm">
-        <input type="submit" value="Gửi">
+        <button type="submit"><a href=""><span><i class="fa-solid fa-magnifying-glass"
+                        style="color: white;"></i></span></a></button>
     </form>
 </div>
