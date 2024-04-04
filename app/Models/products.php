@@ -63,12 +63,19 @@ class products extends Model
     //     return $related_product;
     // }
 
-    function search()
+    function search($perPage = null)
     {
-        if ($key = request()->key) {
-            $search = DB::table('products')
-                ->where('name', 'like', '%' . $key . '%')->get();
+
+        $query = DB::table('products')
+            ->join('type_sub', 'type_sub.id_type_sub', '=', 'products.id_type_sub')
+            ->select('products.*', 'type_sub.name_type_sub');
+
+        if (request()->has('key')) {
+            $query->where('products.name', 'like', '%' . request()->input('key') . '%');
         }
+
+        $search = $query->paginate($perPage)->withQueryString();
+
         return $search;
     }
 
@@ -81,7 +88,6 @@ class products extends Model
             ->get();
         return $data;
     }
-
     // local scope
     // function scopeSearch($query){
     //     if($key = request()->key){

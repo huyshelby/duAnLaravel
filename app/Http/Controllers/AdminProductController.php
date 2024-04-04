@@ -85,7 +85,6 @@ class AdminProductController extends Controller
     public function destroy(Request $request, string $id)
     {
         $this->product->delete_product($id);
-        // $request->session()->flash('thongbao', 'Xóa thành công ');
         return redirect()->route('admin.product.show')->with('message', 'Xóa thành công');
     }
 }

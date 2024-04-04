@@ -46,14 +46,15 @@
                             </div>
                             <div class="content-product-hot">
                                 {{-- <a href="/product/detail/{{ $item->id_product }}"><img src="image/{{ $item->img_main }}" alt=""></a> --}}
-                                <a href="{{ route('product.detail', ['id' => $item->id_product]) }}"><img src="image/{{ $item->img_main }}" alt=""></a>
+                                <a href="{{ route('product.detail', ['id' => $item->id_product]) }}"><img
+                                        src="image/{{ $item->img_main }}" alt=""></a>
                                 <div class="text-product-hot">
                                     <p class="fw-bold mb-2">{{ $item->name }}</p>
                                     <a href="" class="mb-2"
                                         style="color: #A5A5A5">{{ $item->name_type_sub }}</a>
                                     <p class="mb-2"><i class="fa-solid fa-check"></i> In stock</p>
                                     @if ($item->sale)
-                                        <del style="color: #A5A5A5">{{ number_format($item->price,0) }}</del> <span
+                                        <del style="color: #A5A5A5">{{ number_format($item->price, 0) }}</del> <span
                                             class="fw-bold">{{ number_format($item->price - ($item->price * $item->sale) / 100), 0 }}
                                             ₫</span> <br>
                                     @else
@@ -81,11 +82,11 @@
                                 </div>
                             </div>
                             <div class="buy-now mt-2">
-                                <a href=""><span>
-                                        <p class="m-0">Lựa Chọn Các Tùy Chọn</p> <i
-                                            class="fa-solid fa-cart-shopping"></i>
+                                {{-- <input type="hidden" value="{{ $item->id_product }}"> --}}
+                                <a href="{{ route('addCart', ['id' => $item->id_product, 'quantity' => 1]) }}" class="button-content"><span>
+                                        <p class="m-0">Lựa Chọn Các Tùy Chọn</p>
+                                        <i class="fa-solid fa-cart-shopping"></i>
                                     </span></a>
-
                             </div>
                         </div>
                     </div>

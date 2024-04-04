@@ -80,7 +80,7 @@
                         <div class="user">
                             <div class="box d-flex align-items-center">
                                 <div class="inside-box">
-                                    <a href=""><span><i class="fa-solid fa-user"></i></span></a>
+                                    <a href="{{ route('user') }}"><span><i class="fa-solid fa-user"></i></span></a>
                                 </div>
                             </div>
                         </div>
@@ -96,7 +96,7 @@
                         </div>
                         <div class="cart">
                             <div class="cart-posion">
-                                <a href=""><span><i class="fa-solid fa-cart-shopping"
+                                <a href="/showCart"><span><i class="fa-solid fa-cart-shopping"
                                             style="color: white"></i></span></a>
                                 <div class="count-cart">
                                     <p class="p-0 m-0">0</p>

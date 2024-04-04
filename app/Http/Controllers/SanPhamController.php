@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\View;
 use App\Models\products;
 use App\Models\cate;
 
+
 class SanPhamController extends Controller
 {
     /**
@@ -17,7 +18,15 @@ class SanPhamController extends Controller
      */
     private $product;
     private $cate;
-    public function __construct(products $product){
+    const perPage = 8;
+    private $saleCodes = [
+        'huydeptrai' => 50,
+        'huyhandsome' => 50,
+        'abc' => 10,
+        'def' => 10
+    ];
+    public function __construct(products $product)
+    {
         $this->product = $product;
         // $this->cate = $cate;
         // $data = $this->cate->allCate();
@@ -26,7 +35,8 @@ class SanPhamController extends Controller
         View::share('data_type', $data_type);
         // view('layout.header', ['data' => $data]);
     }
-    public function showApi(){
+    public function showApi()
+    {
         $all = $this->product->all_product();
         // dd($all);
         return response([
@@ -37,32 +47,123 @@ class SanPhamController extends Controller
     }
     public function index()
     {
-        
+
         $product_hot = $this->product->product_hot();
         $speaker_home = $this->product->speaker_home();
         // dd($speaker_home);
         return view('home', ['product_hot' => $product_hot, 'speaker_home' => $speaker_home]);
     }
 
-    public function detail($id = 0){
+    public function detail($id = 0)
+    {
         $data = $this->product->detail_product($id);
         $data_type = DB::table('type_main')->get();
-        // $relate = $this->product->related_product($id);
-        // dd($relate);
         return view('detail-product', ['data' => $data, 'data_type' => $data_type]);
     }
 
-    public function search(){
-        $search = $this->product->search();
-        return view('search', ['data' => $search, 'key' => request()->key]);
+    public function search()
+    {
+        $search = $this->product->search(self::perPage);
+        // dd(request());
+        return view('search', ['data' => $search, 'key' => request()->input('key')]);
     }
 
-    public function product_cate($id = 0){
+    public function product_cate($id = 0)
+    {
         // $data_type = DB::table('type_main')->get();
         $data = $this->product->product_cate($id);
-        // dd($data);
+
         return view('product_cate', ['data' => $data]);
-        
+    }
+
+    public function cart(string $id, $quantity = 1)
+    {
+        $product = $this->product->detail_product($id);
+        $cart = session()->get('cart', []);
+        if (isset($cart[$id])) {
+            $cart[$id]['quantity'] += 1;
+        } else {
+            $cart[$id] = [
+                "id" => $id,
+                "name" => $product->name,
+                "quantity" => 1,
+                "image" => $product->img_main
+            ];
+        }
+        session()->put('cart', $cart);
+
+        // session()->flush();
+        // dd($cart);
+        // dd(session()->get('cart'));
+        return view('cart', ['cart' => $cart])->with('message', 'Product has been added to cart!');
+    }
+
+    public function show_cart()
+    {
+        // dd(session()->get('cart'));
+        $cart = session()->get('cart');
+        // session()->flush();
+        return view('cart', ['cart' => $cart]);
+    }
+
+    public function update_cart(Request $request)
+    {
+        $cart = $request->session()->get('cart', []);
+
+        foreach ($request->input('id_sp', []) as $index => $id) {
+            $quantity = $request->input('quantity.' . $index);
+            if ($quantity > 0) {
+                if (isset($cart[$id])) {
+                    $cart[$id]['quantity'] = $quantity;
+                }
+            } else {
+                $index = array_search($id, array_column($cart, 'id'));
+                array_splice($cart, $index, 1);
+            }
+        }
+
+        $request->session()->put('cart', $cart);
+        return redirect()->route('showCart')->with('message', 'Thay đổi thành công');
+    }
+
+    public function deleteCart(Request $request, $id)
+    {
+        $cart = $request->session()->get('cart', []);
+
+        if (array_key_exists($id, $cart)) {
+            $cartIndex = array_search($id, array_column($cart, 'id_product'));
+            array_splice($cart, $cartIndex, 1);
+            $request->session()->put('cart', $cart);
+        }
+
+        return redirect()->route('showCart')->with('message', 'Xóa thành công');
+
+        // return redirect()->route('showCart')->with('message', 'Xóa thành công');
+    }
+
+    public function sale(Request $request)
+    {
+        $saleCode = $request->input('sale');
+        $saleCodes = [
+            'huydeptrai' => 50,
+            'huyhandsome' => 50,
+            'abc' => 10,
+            'def' => 10
+        ];
+    
+        if (array_key_exists($saleCode, $saleCodes)) {
+            $discount = $saleCodes[$saleCode];
+            session()->flash('success', 'Bạn được giảm ' . $discount . ' %');
+        } else {
+            $discount = 0;
+            session()->flash('error', 'Mã giảm giá không tồn tại!');
+        }
+        // session()->flush();
+        return redirect()->route('showCart')->with('discount', $discount);
+    }
+
+    public function check_out(){
+        return view('checkout');
     }
     /**
      * Show the form for creating a new resource.
@@ -109,6 +210,5 @@ class SanPhamController extends Controller
      */
     public function destroy(string $id)
     {
-        //
     }
 }
