@@ -32,23 +32,16 @@ class UserController extends Controller
         $pass = trim(strip_tags($request['pass']));
         $user_name = explode('@', $email_user)[0];
         $user_byEmail = $this->user->user_byEmail($request);
-        // dd($user_byEmail);
         if (isset($user_byEmail)) {
             return redirect()->route('user')->with('message', 'Email đã tồn tại !');
         }
-        // dd($request);
         $new_user = $this->user->register($request);
 
         // gửi mail
         Mail::send('mail', ['user_name' => $user_name, 'email' => $request['email']], function ($email) use ($request) {
             $email->subject('Đăng ký thành công');
-            $email->to($request['email'], $request['user_name']);
+            $email->to($request['email']);
         });
-        // dd($user_name);
-        // Mail::send('mail', ['user_name' => $user_name, 'email' => $request['email']], function ($message) use ($request) {
-        //     $message->to($request['email'], $request['userName'])
-        //         ->subject('Đăng ký thành công');
-        // });
         return redirect()->route('profile')->with('message', "Đăng ký thành công!");
     }
     public function login()
@@ -63,6 +56,8 @@ class UserController extends Controller
         ];
         // dd($request['pass']);
         if (auth()->guard('web')->attempt($a)) {
+            // $user = auth()->guard('web')->user();
+            // dd($user);
             return redirect()->route('profile')->with('message', 'Đăng nhập thành công!');
         }
 
@@ -86,17 +81,42 @@ class UserController extends Controller
             $this->user->add_token($token_random, $id_user);
 
             $to_email = $data['email'];
-            $link_reset = url('/update-pass?email=' . $to_email . '&token=' . $token_random);
+            $link_reset = url('/user/update-pass?email=' . $to_email . '&token=' . $token_random);
             $dataa = array("name" => $title, "body" => $link_reset, "email" => $data['email']);
 
             Mail::send('forgot_pass_notification', ['data' => $dataa], function ($message) use ($title, $data) {
                 $message->to($data['email'])->subject($title);
-                $message->from($data['email'], $title);
+                // $message->from($data['email'], $title);
             });
 
             return redirect()->back()->with('message', 'Gửi mail thành công, Vui lòng vào mail để lấy lại mật khẩu !');
         } else {
             return redirect()->back()->with('error', 'Email không chính xác');
+        }
+    }
+    public function update_pass(Request $request)
+    {
+        // dd($request['token']);
+        $user = $this->user->user_byEmail($request);
+        // dd($user->token);
+        if ($user) {
+            if ($user->token == $request['token']) {
+                return view('update_pass');
+            } else {
+                return  redirect()->route('forgot_pass')->with('error', 'Link quên mật khẩu đã hết hạn, vui lòng gửi lại email');
+            }
+        }
+    }
+    public function update_pass_act(registerValid $request)
+    {
+        $user = $this->user->user_by_email_token($request);
+        // dd(count($user));
+        if (count($user) >= 1) {
+            $token_random = str::random(20);
+            $this->user->update_pass($request, $token_random);
+            return redirect()->route('login')->with('success', 'Thay đổi mật khẩu thành công !');
+        } else {
+            return redirect()->back()->with('error', 'Email không chính xác !');
         }
     }
     public function user_profile()

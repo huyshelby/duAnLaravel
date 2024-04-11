@@ -10,13 +10,31 @@ class products extends Model
 {
     use HasFactory;
     protected $table = 'products';
-    function all_product()
+    function getAll(){
+        return DB::table('products')
+        ->join('type_sub', 'type_sub.id_type_sub', '=', 'products.id_type_sub')
+        ->orderBy('id_product', 'desc')
+        ->get();
+    }
+    function all_product($perPage = null, $sortArr = null)
     {
+
         $all = DB::table('products')
-            ->join('type_sub', 'type_sub.id_type_sub', '=', 'products.id_type_sub')
-            ->orderBy('id_product', 'desc')
-            ->get();
-        return $all;
+            ->join('type_sub', 'type_sub.id_type_sub', '=', 'products.id_type_sub');
+
+        $orderBy = 'id_product';
+        $orderType = 'desc';
+        if (!empty($sortArr) && is_array($sortArr)) {
+            if (!empty($sortArr['sortBy']) && !empty($sortArr['sortType'])) {
+                $orderBy = trim($sortArr['sortBy']);
+                $orderType = trim($sortArr['sortType']);
+            }
+        }
+        $pagi = $all->orderBy($orderBy, $orderType)
+            ->paginate($perPage)
+            ->withQueryString();
+
+        return $pagi;
     }
     function product_hot()
     {
@@ -62,6 +80,20 @@ class products extends Model
     //         ->first();
     //     return $related_product;
     // }
+
+
+    // function search($key, $perPage = null)
+    // {
+    //     $query = DB::table('products')
+    //         ->join('type_sub', 'type_sub.id_type_sub', '=', 'products.id_type_sub')
+    //         ->select('products.*', 'type_sub.name_type_sub')
+    //         ->where('products.name', 'like', '%' . $key . '%');
+
+    //     $search = $query->paginate($perPage)->withQueryString();
+    //     return $search;
+    // }
+
+
 
     function search($perPage = null)
     {

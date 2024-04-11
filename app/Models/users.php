@@ -48,4 +48,23 @@ class users extends Model
                 'password' => Hash::make($pass)
             ]);
     }
+
+    public function user_by_email_token(registerValid $request){
+        $email = $request['email'];
+        $token = $request['token'];
+        return DB::table('users')
+        ->where('email', '=' , $email, 'and', 'token', '=', $token)
+        ->get();
+    }
+
+    public function update_pass(registerValid $request, $token_random){
+        $email = $request['email'];
+        $token = $request['token'];
+        return DB::table('users')
+        ->where('email', '=' , $email, 'and', 'token', '=', $token)
+        ->update([
+            'password' => Hash::make($request['pass']),
+            'token' => $token_random
+        ]);
+    }
 }

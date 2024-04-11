@@ -68,4 +68,20 @@ class admin_product extends Model
                 'description' => $des
             ]);
     }
+
+    function search($perPage = null)
+    {
+
+        $query = DB::table('products')
+            ->join('type_sub', 'type_sub.id_type_sub', '=', 'products.id_type_sub')
+            ->select('products.*', 'type_sub.name_type_sub');
+
+        if (request()->has('key')) {
+            $query->where('products.name', 'like', '%' . request()->input('key') . '%');
+        }
+
+        $search = $query->paginate($perPage)->withQueryString();
+
+        return $search;
+    }
 }

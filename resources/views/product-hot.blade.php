@@ -45,7 +45,6 @@
                                 </div>
                             </div>
                             <div class="content-product-hot">
-                                {{-- <a href="/product/detail/{{ $item->id_product }}"><img src="image/{{ $item->img_main }}" alt=""></a> --}}
                                 <a href="{{ route('product.detail', ['id' => $item->id_product]) }}"><img
                                         src="image/{{ $item->img_main }}" alt=""></a>
                                 <div class="text-product-hot">
@@ -82,7 +81,6 @@
                                 </div>
                             </div>
                             <div class="buy-now mt-2">
-                                {{-- <input type="hidden" value="{{ $item->id_product }}"> --}}
                                 <a href="{{ route('addCart', ['id' => $item->id_product, 'quantity' => 1]) }}" class="button-content"><span>
                                         <p class="m-0">Lựa Chọn Các Tùy Chọn</p>
                                         <i class="fa-solid fa-cart-shopping"></i>

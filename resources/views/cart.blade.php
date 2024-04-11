@@ -31,6 +31,7 @@
                                 <h1>{{ session('error') }}</h1>
                             </div>
                         @endif
+                        {{-- @dd(session('cart')) --}}
                         @if (session('cart') != '')
                             <table class="table">
                                 <thead>
@@ -104,7 +105,7 @@
                                 </tfoot>
                             </table>
                         @else
-                            <h1>Chưa có cc gì hết</h1>
+                            <h1>Chưa có gì hết</h1>
                         @endif
                     </div>
                 </div>

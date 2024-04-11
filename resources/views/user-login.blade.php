@@ -22,8 +22,15 @@
                             </div>
                             <div class="mt-3">
                                 <label for="pass">Mật khẩu</label> <span style="color: red">*</span> <br>
-                                <input type="password" class="form-control" name="password" value="{{ old('pass') }}">
-                                <b class="text-danger"> @error('password')
+                                <input type="password" class="form-control" name="pass" value="{{ old('pass') }}">
+                                <b class="text-danger"> @error('pass')
+                                        {{ $message }}
+                                    @enderror </b>
+                            </div>
+                            <div class="mt-3">
+                                <label for="pass2">Nhập lại mật khẩu</label> <span style="color: red">*</span> <br>
+                                <input type="password" class="form-control" name="pass2" value="{{ old('pass2') }}">
+                                <b class="text-danger"> @error('pass2')
                                         {{ $message }}
                                     @enderror </b>
                             </div>

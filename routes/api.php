@@ -19,3 +19,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('test_api', [SanPhamController::class, 'showApi']);
+Route::get('/', [SanPhamController::class, 'index'])->name('/');
+
+
+Route::prefix('product')->group(function(){
+    // Route::get('search', [SanPhamController::class, 'search'])->name('product.search');
+});
+

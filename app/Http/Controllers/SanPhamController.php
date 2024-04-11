@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\View;
 
 use App\Models\products;
 use App\Models\cate;
-
+use Illuminate\Support\Facades\Auth;
 
 class SanPhamController extends Controller
 {
@@ -37,7 +37,7 @@ class SanPhamController extends Controller
     }
     public function showApi()
     {
-        $all = $this->product->all_product();
+        $all = $this->product->getAll();
         // dd($all);
         return response([
             'data' => $all,
@@ -51,7 +51,19 @@ class SanPhamController extends Controller
         $product_hot = $this->product->product_hot();
         $speaker_home = $this->product->speaker_home();
         // dd($speaker_home);
+        // session()->flush();
         return view('home', ['product_hot' => $product_hot, 'speaker_home' => $speaker_home]);
+        // return [
+        //     $product_hot,
+        //     $speaker_home
+        // ];
+
+        // return response()->json([
+        //     'data-hot' => $product_hot,
+        //     'status' => 200,
+        //     'message' => 'ok',
+        //     'data-speaker' => $speaker_home,
+        // ], 200);
     }
 
     public function detail($id = 0)
@@ -64,8 +76,13 @@ class SanPhamController extends Controller
     public function search()
     {
         $search = $this->product->search(self::perPage);
-        // dd(request());
-        return view('search', ['data' => $search, 'key' => request()->input('key')]);
+        return view('search', ['data' => $search]);
+        // return $search;
+        // return response()->json([
+        //     'data-hot' => $search,
+        //     'status' => 200,
+        //     'message' => 'ok'
+        // ], 200); 
     }
 
     public function product_cate($id = 0)
@@ -93,8 +110,6 @@ class SanPhamController extends Controller
         session()->put('cart', $cart);
 
         // session()->flush();
-        // dd($cart);
-        // dd(session()->get('cart'));
         return view('cart', ['cart' => $cart])->with('message', 'Product has been added to cart!');
     }
 
@@ -150,7 +165,7 @@ class SanPhamController extends Controller
             'abc' => 10,
             'def' => 10
         ];
-    
+
         if (array_key_exists($saleCode, $saleCodes)) {
             $discount = $saleCodes[$saleCode];
             session()->flash('success', 'Bạn được giảm ' . $discount . ' %');
@@ -162,7 +177,10 @@ class SanPhamController extends Controller
         return redirect()->route('showCart')->with('discount', $discount);
     }
 
-    public function check_out(){
+    public function check_out()
+    {
+        // dd(Auth::user());
+
         return view('checkout');
     }
     /**

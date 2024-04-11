@@ -23,7 +23,8 @@ class registerValid extends FormRequest
     {
         return [
             'email' => 'required|email|max:50|ends_with:@gmail.com',
-            'password' => 'required|min:6|max:20',
+            'pass' => 'required|min:6|max:20',
+            'pass2' => 'required|same:pass',
         ];
     }
     public function messages()
@@ -33,9 +34,11 @@ class registerValid extends FormRequest
             'email.required' => 'Chưa nhập email',
             'email.email' => 'Nhập email chưa đúng',
             'email.ends_with' => 'Email phải có đuôi là @gmail.com',
-            'password.required' => 'Bạn chưa nhập mật khẩu',
-            'password.min' => 'Nhập ít nhất 6 ký tự',
-            'password.max' => 'Nhập tối đa 20 ký tự'
+            'pass.required' => 'Bạn chưa nhập mật khẩu',
+            'pass.min' => 'Nhập ít nhất 6 ký tự',
+            'pass.max' => 'Nhập tối đa 20 ký tự',
+            'pass2.required' => 'Bạn chưa nhập lại mật khẩu',
+            'pass2.same' => 'Mật khẩu chưa trùng nhau',
         ];
     }
 }

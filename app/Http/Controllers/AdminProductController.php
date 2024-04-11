@@ -8,6 +8,8 @@ use App\Models\cate;
 use App\Models\products;
 use App\Models\cate_sub;
 
+
+
 class AdminProductController extends Controller
 {
     /**
@@ -17,6 +19,7 @@ class AdminProductController extends Controller
     private $cate;
     private $product_list;
     private $cate_sub;
+    const perPage = 4;
     public function __construct(admin_product $admin_product, cate $cate, products $product_list, cate_sub $cate_sub)
     {
         $this->product = $admin_product;
@@ -45,18 +48,45 @@ class AdminProductController extends Controller
     {
         $this->product->add($request);
 
-        dd($request);
+        // dd($request);
         return redirect('admin');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show()
+    public function show(Request $request)
     {
-        $data = $this->product_list->all_product();
+        // logic sắp xếp
+        $sortType = $request->input('sort-type');
+        $sortBy = $request->input('sort-by');
+        $allSort = ['asc', 'desc'];
+
+        if(!empty($sortType) && in_array($sortType, $allSort)){
+            if($sortType == 'desc'){
+                $sortType = 'asc';
+            }else{
+                $sortType = 'desc';
+            }
+        }else{
+            $sortType = 'desc';
+        }
+
+        $arrSort = [
+            'sortBy' => $sortBy,
+            'sortType' => $sortType
+        ];
+
+
+        $data = $this->product_list->all_product(self::perPage ,$arrSort);
+
+        return view('admin.products.show', ['data' => $data, 'sortType' => $sortType]);
+    }
+
+    public function search(){
+        $data = $this->product->search(self::perPage);
         // dd($data);
-        return view('admin.products.show', ['data' => $data]);
+        return view('admin.products.search', ['data' => $data]);
     }
 
     /**

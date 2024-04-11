@@ -8,6 +8,11 @@
                         <form action="{{ route('login_') }}" method="post">
                             @csrf
                             <h3>ĐĂNG NHẬP</h3>
+                            @if (session('success'))
+                                <div class="alert alert-success" role="alert">
+                                    <h5>{{ session('success') }}</h3>
+                                </div>
+                            @endif
                             @if (session('message'))
                                 <div class="alert alert-danger" role="alert">
                                     <h5>{{ session('message') }}</h3>

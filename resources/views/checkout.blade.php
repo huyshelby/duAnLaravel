@@ -96,9 +96,8 @@
                         <h5>Tạm tính</h5>
                     </div>
                     <hr>
-                    <div>
+                    <div class="d-flex justify-content-between">
                         <div>
-                            <span>x</span>
                             <span>img</span>
                             <span>name</span>
                             <span>quantity</span>

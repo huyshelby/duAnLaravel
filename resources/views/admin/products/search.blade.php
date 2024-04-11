@@ -91,6 +91,7 @@
             @endif
 
 
+
             <table class="table table-striped">
                 <thead class="alert-success" style=" background-color: #1087b9; color:white; text-transform:uppercase">
                     <tr>
@@ -98,12 +99,12 @@
                         <th>Product ID</th>
                         <th>Product Type</th>
                         <th>Product Name</th>
-                        <th><a href="?sort-by=price&sort-type={{ $sortType }}">Product Price</a></th>
-                        <th><a href="?sort-by=sale&sort-type={{ $sortType }}">Product Sale</a></th>
+                        <th>Product Price</th>
+                        <th>Product Sale</th>
                         <th>Product Image</th>
                         <th>Description</th>
-                        <th><a href="?sort-by=view&sort-type={{ $sortType }}">Product View</a></th>
-                        <th><a href="?sort-by=created_at&sort-type={{ $sortType }}">Created at</a></th>
+                        <th>Product View</th>
+                        <th>Created at</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -116,11 +117,7 @@
                             <td>{{ $item->name_type_sub }}</td>
                             <td>{{ $item->name }}</td>
                             <td>{{ number_format($item->price, 0) }} ₫</td>
-                            @if (!empty($item->sale))
-                                <td>{{ $item->sale }} %</td>
-                            @else
-                                <td></td>
-                            @endif
+                            <td>{{ $item->sale }} %</td>
                             <td><img src="/image/{{ $item->img_main }}" width="100px" alt=""></td>
                             <td>{{ $item->description }}</td>
                             <td>{{ $item->view }}</td>
@@ -153,8 +150,9 @@
                     {{ $data->links() }}
                 </div>
             </tfoot>
-
+            
         </form>
+        
     @endsection
 </body>
 

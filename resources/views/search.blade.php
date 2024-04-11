@@ -6,7 +6,7 @@
                 <div class="col-sm-12 p-0">
                     <div class="path-search">
                         <span style="color: #A5A5A5">Trang chủ</span> / <span style="font-weight:500">Kết quả tìm kiếm cho
-                            "{{ $key }}"</span>
+                            "{{ request()->input('key') }}"</span>
                     </div>
                 </div>
                 <div class="col-sm-3">
@@ -17,7 +17,7 @@
                 <div class="col-sm-9">
                     <div class="result-search">
                         <div class="key-search">
-                            <h2>Kết quả tìm kiếm cho "{{ $key }}"</h2>
+                            <h2>Kết quả tìm kiếm cho "{{ request()->input('key') }}"</h2>
                         </div>
                         <div class="product-search">
                             <div class="row">
